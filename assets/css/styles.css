@@ -1631,3 +1631,6 @@ html.has-modal, body.has-modal{ overflow:hidden; }
 @media(max-width:680px){
   .case--for-sale .case-sale-badge{top:.75rem;right:.75rem;padding:.55rem .7rem;font-size:10px}
 }
+
+/* Keep both MyChoir store links in the existing button style. */
+#apps .product-store-links{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-start}
