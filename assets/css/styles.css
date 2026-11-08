@@ -1568,10 +1568,10 @@ html.has-modal, body.has-modal{ overflow:hidden; }
 }
 #apps .product-feature:nth-child(2) .product-visual.product-carousel{background:#f6f6f7}
 #apps .product-carousel-track{
-  display:flex;align-items:stretch;gap:12px;width:100%;height:100%;
-  padding:22px 18px 54px;box-sizing:border-box;
+  display:flex;align-items:stretch;gap:0;width:100%;height:100%;
+  padding:0 0 54px;box-sizing:border-box;
   overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-behavior:smooth;
-  scroll-padding-inline:18px;scrollbar-width:none;overscroll-behavior-x:contain;
+  scroll-padding-inline:0;scrollbar-width:none;overscroll-behavior-x:contain;
 }
 #apps .product-carousel-track::-webkit-scrollbar{display:none}
 #apps .product-carousel-image{
@@ -1596,7 +1596,6 @@ html.has-modal, body.has-modal{ overflow:hidden; }
 }
 @media(max-width:760px){
   #apps .product-visual.product-carousel{height:330px}
-  #apps .product-carousel-track{padding-top:18px}
 }
 @media(prefers-reduced-motion:reduce){#apps .product-carousel-track{scroll-behavior:auto}}
 
