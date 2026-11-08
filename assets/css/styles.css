@@ -119,3 +119,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(prefers-reduced-motion:reduce){html,.product-carousel-track{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 .icon-arrow{display:inline-block;width:17px;height:17px;vertical-align:middle;flex-shrink:0}.icon-arrow-down{transform:rotate(90deg)}.icon-chevron{display:block;width:12px;height:8px}.product-feature{scroll-margin-top:110px}
+
+/* Quiet browser chrome for website previews. */
+.browser-frame{overflow:hidden;border:1px solid #d2d9cc;border-radius:14px;background:var(--paper);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .3s}
+.browser-bar{height:46px;display:grid;grid-template-columns:56px minmax(0,1fr) 56px;align-items:center;gap:10px;padding:0 15px;background:#e8ede3;border-bottom:1px solid #d6ddcf}
+.browser-dots{display:flex;gap:5px}.browser-dots i{width:7px;height:7px;background:#aebba6;border-radius:50%}.browser-dots i:nth-child(2){opacity:.7}.browser-dots i:nth-child(3){opacity:.45}
+.browser-address{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;line-height:26px;padding:0 10px;border:1px solid #d6dece;border-radius:5px;background:#f5f7f1;color:#5c6b54;transition:background .2s,color .2s}
+.browser-address:hover{background:#fff;color:var(--ink)}.browser-address:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.browser-bar-end{display:flex;justify-content:flex-end;color:#819076}.browser-bar-end svg{width:13px;height:13px}
+.case .browser-frame .bg{border:0}.case-sale-badge{top:60px}
+.case.reveal-ready{opacity:0;transform:translateY(22px);transition:opacity .65s ease var(--reveal-delay,0ms),transform .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms)}
+.case.reveal-ready.is-revealed{opacity:1;transform:none}
+@media(hover:hover) and (pointer:fine){.case:hover .browser-frame{transform:translateY(-5px);box-shadow:0 16px 30px -18px #3b4f3a55;border-color:#aab99f}.case:hover .bg img{transform:scale(1.035)}}
+@media(max-width:760px){.browser-bar{height:40px;grid-template-columns:35px minmax(0,1fr) 18px;gap:8px;padding:0 11px}.browser-dots{gap:4px}.browser-dots i{width:6px;height:6px}.browser-address{font-size:9px;line-height:24px;padding:0 7px}.browser-frame{border-radius:11px}.case-sale-badge{top:52px}}
+@media(prefers-reduced-motion:reduce){.case.reveal-ready{opacity:1;transform:none;transition:none}.case:hover .browser-frame,.case:hover .bg img{transform:none}.browser-frame,.browser-address{transition:none}}
