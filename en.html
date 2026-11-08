@@ -1,131 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ARTOM / WEBFLOW — Premium Editorial</title>
-    <meta name="description" content="Premium Webflow websites: clean grids, refined typography, controlled animation."/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261108-seamless" />
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="uk" href="./index.html" />
-    <link rel="alternate" hreflang="en" href="./en.html" />
-    <link rel="alternate" hreflang="de" href="./de.html" />
-    <link rel="alternate" hreflang="x-default" href="./en.html" />
-    <link rel="canonical" href="./en.html"/>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand font-title">artom.dev</div>
-        <nav class="main-nav">
-          <a href="#about">About</a>
-          <a href="#cases">Cases</a>
-          <a href="#contacts">Contacts</a>
-        </nav>
-        <div class="lang-switch">
-          <button id="lang-btn" aria-label="Change language" aria-expanded="false">
-            <span class="lang-current">EN</span>
-            <svg class="chev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <ul>
-            <li><a href="index.html">UK</a></li>
-            <li><a href="en.html">EN</a></li>
-            <li><a href="de.html">DE</a></li>
-          </ul>
-        </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('lang-btn');
-            const wrapper = btn?.parentElement;
-            if(!btn || !wrapper) return;
-            btn.addEventListener('click', () => {
-              const isOpen = wrapper.classList.toggle('open');
-              btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-            document.addEventListener('click', (e) => {
-              if (!wrapper.contains(e.target)) {
-                wrapper.classList.remove('open');
-                btn.setAttribute('aria-expanded', 'false');
-              }
-            });
-          });
-        </script>
-      </div>
-    </header>
-
-    <main>
-      <!-- HERO -->
-      <section id="hero" class="hero grid-bg">
-        <div class="container hero-grid">
-          <div class="hero-left">
-            <div class="eyebrow">webflow architect</div>
-            <h1 class="font-title type-title reveal" style="font-family:'Space Grotesk', sans-serif;">
-              The digital image of your brand
-            </h1>
-            <div class="signature-line"></div>
-            <p class="type-body hero-body reveal">
-              I design websites that elevate your status and attract clients. Minimalism, structure, refined typography.
-            </p>
-            <div class="hero-ctas">
-              <a class="btn btn-gold reveal" href="#cases">My works</a>
-              <a class="cta-link reveal" href="#contacts">
-                <span>Order a website</span>
-                <svg class="arrow-thin" viewBox="0 0 48 20" aria-hidden="true">
-                  <path d="M2 10 H42"/><path d="M42 10 L36 4 M42 10 L36 16"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="hero-right">
-            <div class="vr"></div>
-            <div class="caption">Selected works<br/>2023—2025</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="hero-meta">
-        <div class="container hero-meta-inner">
-          <div class="trust">
-            <span>webflow</span><span>ui/ux</span><span>cms</span><span>animations</span><span>seo</span>
-          </div>
-          <a class="scroll-link" href="#about">
-            <span>scroll</span>
-            <svg class="arrow-thin rotate" viewBox="0 0 48 20" aria-hidden="true">
-              <path d="M2 10 H42"/><path d="M42 10 L36 4 M42 10 L36 16"/>
-            </svg>
-          </a>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about" class="section">
-        <div class="container grid-2">
-          <div>
-            <h2 class="font-title type-h2">I build websites on Webflow</h2>
-            <p class="type-body">
-              I help brands look stronger online. <br>Fast, stylish, and result‑oriented websites.
-            </p>
-          </div>
-          <div>
-            <ul class="type-body bullets">
-              <li>UX / IA — architecture, flows, prototypes</li>
-              <li>Editorial UI — type, grids, composition</li>
-              <li>Webflow — components, CMS, integrations</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- CASES -->
-      <section id="cases" class="section">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>artom.dev | Apps, websites and personal projects</title><meta name="description" content="Personal projects by artom.dev: MyChoir, MySongs and websites. Exploring software development as a hobby.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261108-personal">
+<link rel="alternate" hreflang="uk" href="./index.html"><link rel="alternate" hreflang="en" href="./en.html"><link rel="alternate" hreflang="de" href="./de.html"><link rel="alternate" hreflang="x-default" href="./en.html">
+<link rel="canonical" href="https://artom-sites.github.io/artom.dev/en.html">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container header-inner">
+<a class="brand" href="#hero" aria-label="artom.dev">artom<span>.dev</span></a>
+<nav class="main-nav" aria-label="Apps / Websites"><a href="#apps">Apps</a><a href="#cases">Websites</a><a href="#about">About</a><a href="#contacts">Contact</a></nav>
+<div class="lang-switch"><button id="lang-btn" aria-label="Change language" aria-expanded="false" aria-controls="languages"><span class="lang-current">EN</span><span aria-hidden="true">⌄</span></button><ul id="languages"><li><a href="index.html" lang="uk">UK</a></li><li><a href="en.html" lang="en">EN</a></li><li><a href="de.html" lang="de">DE</a></li></ul></div>
+</div></header>
+<main id="main">
+<section id="hero" class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="eyebrow">Personal space · artom.dev</div><h1>Ideas that become<br><span>apps.</span></h1><p class="hero-body">I build apps and websites in my spare time. This is where I share the things I have imagined, tried and brought to life.</p><div class="hero-ctas"><a class="btn-primary" href="#apps">Explore my projects <span aria-hidden="true">↗</span></a><a class="text-link" href="#contacts">Get in touch</a></div><div class="hobby-note"><span class="status-dot" aria-hidden="true"></span>Building as a hobby</div></div>
+<aside class="project-index"><div class="index-heading"><span>In my portfolio</span><span aria-hidden="true">↘</span></div><a href="#apps"><span class="index-no">01</span><span><strong>MyChoir</strong><small>iOS &amp; Android</small></span><span class="index-arrow" aria-hidden="true">↗</span></a><a href="#apps"><span class="index-no">02</span><span><strong>MySongs</strong><small>iOS</small></span><span class="index-arrow" aria-hidden="true">↗</span></a><a href="#cases"><span class="index-no">03</span><span><strong>Websites</strong><small>Websites with Webflow</small></span><span class="index-arrow" aria-hidden="true">↗</span></a><div class="index-footer">Apps · Web · Design</div></aside>
+</div></section>
+<section id="apps" class="section apps-section"><div class="container"><div class="section-heading"><div><div class="eyebrow">01 / APPS</div><h2>Apps of my own</h2></div><p>Projects for music and everyday life. From an idea of my own to an app you can try.</p></div><div class="products-list"><article class="product-feature"><div class="product-feature-copy"><div class="product-number">01 / iOS &amp; Android</div><div class="product-heading"><img class="product-icon" data-app-icon="6759878768" alt="" width="64" height="64" loading="lazy"><h3>MyChoir</h3></div><p>An app for choir organization, rehearsals and sheet music.</p><div class="product-store-links"><a class="btn-black product-store-link" href="https://apps.apple.com/us/app/mychoir/id6759878768" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a><a class="btn-black product-store-link" href="https://play.google.com/store/apps/details?id=com.mychoir.app" target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a></div></div><div class="product-visual product-carousel" data-carousel="mychoir" aria-label="Screenshots MyChoir">
+      <div class="product-carousel-track" tabindex="0" role="region" aria-roledescription="carousel"><img class="product-carousel-image" src="img/apps/mychoir-01.webp" alt="MyChoir · 1 / 8" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-02.webp" alt="MyChoir · 2 / 8" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-03.webp" alt="MyChoir · 3 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-04.webp" alt="MyChoir · 4 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-05.webp" alt="MyChoir · 5 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-06.webp" alt="MyChoir · 6 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-07.webp" alt="MyChoir · 7 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-08.webp" alt="MyChoir · 8 / 8" loading="lazy" decoding="async"></div>
+      <button class="product-carousel-arrow product-carousel-prev" type="button" aria-label="Previous screenshot" disabled>‹</button>
+      <button class="product-carousel-arrow product-carousel-next" type="button" aria-label="Next screenshot">›</button>
+      <span class="product-carousel-progress" aria-live="polite">01 / 08</span>
+    </div></article>
+<article class="product-feature"><div class="product-feature-copy"><div class="product-number">02 / iOS</div><div class="product-heading"><img class="product-icon" data-app-icon="6814960554" alt="" width="64" height="64" loading="lazy"><h3>MySongs</h3></div><p>Song history, performance statistics and a shared church library.</p><a class="btn-black product-store-link" href="https://apps.apple.com/us/app/mysongs/id6814960554" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a></div><div class="product-visual product-carousel" data-carousel="mysongs" aria-label="Screenshots MySongs">
+      <div class="product-carousel-track" tabindex="0" role="region" aria-roledescription="carousel"><img class="product-carousel-image" src="img/apps/mysongs-01.webp" alt="MySongs · 1 / 5" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-02.webp" alt="MySongs · 2 / 5" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-03.webp" alt="MySongs · 3 / 5" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-04.webp" alt="MySongs · 4 / 5" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-05.webp" alt="MySongs · 5 / 5" loading="lazy" decoding="async"></div>
+      <button class="product-carousel-arrow product-carousel-prev" type="button" aria-label="Previous screenshot" disabled>‹</button>
+      <button class="product-carousel-arrow product-carousel-next" type="button" aria-label="Next screenshot">›</button>
+      <span class="product-carousel-progress" aria-live="polite">01 / 05</span>
+    </div></article></div></div></section>
+<section id="cases" class="section">
         <div class="container">
-          <div class="eyebrow font-title">cases</div>
+          <div class="section-heading"><div><div class="eyebrow">02 / WEB</div><h2>Websites and web projects</h2></div><p>Another side of my hobby: exploring composition, typography and interaction. Webflow is one of the tools I use.</p></div>
           <div class="cases-grid">
             <!-- Case 1 -->
             <article class="case">
@@ -133,10 +42,10 @@
               <div class="content">
                 <div>
                   <h3 class="font-title type-h3">Targetologist Landing</h3>
-                  <p class="type-body" style="margin-top:.5rem;color:#555">Landing page for an advertising specialist</p>
+                  <p class="type-body">Landing page for an advertising specialist</p>
                 </div>
                 <div class="actions">
-                  <a class="btn-black" href="https://artom-targetolog-site.webflow.io/" target="_blank" rel="noopener">Open site</a>
+                  <a class="btn-black" href="https://artom-targetolog-site.webflow.io/" target="_blank" rel="noopener noreferrer">Open site</a>
                   <svg class="arrow-thin" viewBox="0 0 48 20" aria-hidden="true"><path d="M2 10 H42"/><path d="M42 10 L36 4 M42 10 L36 16"/></svg>
                 </div>
               </div>
@@ -147,10 +56,10 @@
               <div class="content">
                 <div>
                   <h3 class="font-title type-h3">Auto Engine Service</h3>
-                  <p class="type-body" style="margin-top:.5rem;color:#555">Service website with simple CTAs and a work gallery</p>
+                  <p class="type-body">Service website with simple CTAs and a work gallery</p>
                 </div>
                 <div class="actions">
-                  <a class="btn-black" href="https://avto-engine-servise.webflow.io/" target="_blank" rel="noopener">Open site</a>
+                  <a class="btn-black" href="https://avto-engine-servise.webflow.io/" target="_blank" rel="noopener noreferrer">Open site</a>
                   <svg class="arrow-thin" viewBox="0 0 48 20" aria-hidden="true"><path d="M2 10 H42"/><path d="M42 10 L36 4 M42 10 L36 16"/></svg>
                 </div>
               </div>
@@ -161,10 +70,10 @@
               <div class="content">
                 <div>
                   <h3 class="font-title type-h3">VA Pro Services</h3>
-                  <p class="type-body" style="margin-top:.5rem;color:#555">Corporate website with CMS for business services</p>
+                  <p class="type-body">Corporate website with CMS for business services</p>
                 </div>
                 <div class="actions">
-                  <a class="btn-black" href="https://www.va-proservices.com/" target="_blank" rel="noopener">Open site</a>
+                  <a class="btn-black" href="https://www.va-proservices.com/" target="_blank" rel="noopener noreferrer">Open site</a>
                   <svg class="arrow-thin" viewBox="0 0 48 20" aria-hidden="true"><path d="M2 10 H42"/><path d="M42 10 L36 4 M42 10 L36 16"/></svg>
                 </div>
               </div>
@@ -175,10 +84,10 @@
               <div class="content">
                 <div>
                   <h3 class="font-title type-h3">Vhorizon Studio</h3>
-                  <p class="type-body" style="margin-top:.5rem;color:#555">Website for comprehensive wedding services</p>
+                  <p class="type-body">Website for comprehensive wedding services</p>
                 </div>
                 <div class="actions">
-                  <a class="btn-black" href="http://vhorizonstudio.com" target="_blank" rel="noopener">Open site</a>
+                  <a class="btn-black" href="http://vhorizonstudio.com" target="_blank" rel="noopener noreferrer">Open site</a>
                   <svg class="arrow-thin" viewBox="0 0 48 20" aria-hidden="true"><path d="M2 10 H42"/><path d="M42 10 L36 4 M42 10 L36 16"/></svg>
                 </div>
               </div>
@@ -190,7 +99,7 @@
               <div class="content">
                 <div>
                   <h3 class="font-title type-h3">Rumpel-Pumpel</h3>
-                  <p class="type-body" style="margin-top:.5rem;color:#555">Ready-made Webflow website available for purchase</p>
+                  <p class="type-body">Ready-made Webflow website available for purchase</p>
                 </div>
                 <div class="actions">
                   <a class="btn-black" href="https://rumpelpumpel.webflow.io/" target="_blank" rel="noopener noreferrer">Open site</a>
@@ -201,21 +110,11 @@
           </div>
         </div>
       </section>
+<section id="about" class="section about-section"><div class="container about-grid"><div><div class="eyebrow">03 / ARTOM.DEV</div><h2>Making things out of curiosity.</h2><p class="about-intro">I enjoy figuring out how digital things work and trying to build them myself. I started with websites and now make apps too.</p><p>Software development is my hobby. This site brings together my projects, experiments and what I learn in my spare time.</p></div><div class="interests"><div class="interest"><span class="interest-number">01</span><div><h3>Apps</h3><p>My own ideas for phones and everyday use.</p></div></div><div class="interest"><span class="interest-number">02</span><div><h3>Websites</h3><p>From the first screen to the details on mobile.</p></div></div><div class="interest"><span class="interest-number">03</span><div><h3>Design</h3><p>Exploring a simple, clear and pleasant look.</p></div></div></div></div></section>
+<section id="contacts" class="section"><div class="container"><div class="contact-grid"><div><div class="eyebrow">04 / CONTACT</div><h2>An idea or a question?</h2><p>Ask about an app, share an idea or simply say hello.</p><a class="btn-primary" href="https://t.me/artom_dev" target="_blank" rel="noopener noreferrer">Get in touch <span aria-hidden="true">↗</span></a></div><div class="contacts-links"><a href="mailto:artom.devv@gmail.com" class="contact-a">artom.devv@gmail.com <span aria-hidden="true">↗</span></a><a href="https://t.me/artom_dev" target="_blank" rel="noopener noreferrer" class="contact-a">Telegram <span aria-hidden="true">↗</span></a><a href="https://instagram.com/artom.dev" target="_blank" rel="noopener noreferrer" class="contact-a">Instagram <span aria-hidden="true">↗</span></a></div></div><footer class="site-footer"><a class="brand" href="#hero">artom<span>.dev</span></a><span>Personal projects. Made out of curiosity.</span><span>© 2026</span></footer></div></section>
+</main>
 
-      <!-- MOBILE APPS -->
-      <section id="apps" class="section apps-section"><div class="container"><div class="eyebrow">SELECTED DIGITAL PRODUCTS / 2026</div><div class="products-intro"><h2 class="font-title type-h2">Independent apps</h2><p class="type-body">Beyond websites, I build my own products — from idea to release.</p></div><div class="products-list"><article class="product-feature"><div class="product-feature-copy"><div class="product-number">01 / IOS &amp; ANDROID APPLICATION</div><div class="product-heading"><img class="product-icon" data-app-icon="6759878768" alt="" width="64" height="64" loading="lazy"><h3>MyChoir</h3></div><p>An app for choir organization, rehearsals and sheet music.</p><div class="product-store-links"><a class="btn-black product-store-link" href="https://apps.apple.com/us/app/mychoir/id6759878768" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a><a class="btn-black product-store-link" href="https://play.google.com/store/apps/details?id=com.mychoir.app" target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a></div></div><div class="product-visual product-carousel" data-carousel="mychoir" aria-label="MyChoir screenshots">
-      <div class="product-carousel-track" tabindex="0" role="region" aria-roledescription="carousel"><img class="product-carousel-image" src="img/apps/mychoir-01.webp" alt="MyChoir — 1 / 8" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-02.webp" alt="MyChoir — 2 / 8" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-03.webp" alt="MyChoir — 3 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-04.webp" alt="MyChoir — 4 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-05.webp" alt="MyChoir — 5 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-06.webp" alt="MyChoir — 6 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-07.webp" alt="MyChoir — 7 / 8" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mychoir-08.webp" alt="MyChoir — 8 / 8" loading="lazy" decoding="async"></div>
-      <button class="product-carousel-arrow product-carousel-prev" type="button" aria-label="Previous screenshot" disabled>‹</button>
-      <button class="product-carousel-arrow product-carousel-next" type="button" aria-label="Next screenshot">›</button>
-      <span class="product-carousel-progress" aria-live="polite">01 / 08</span>
-    </div></article>
-<article class="product-feature"><div class="product-feature-copy"><div class="product-number">02 / IOS APPLICATION</div><div class="product-heading"><img class="product-icon" data-app-icon="6814960554" alt="" width="64" height="64" loading="lazy"><h3>MySongs</h3></div><p>Song history, performance statistics and a shared church library.</p><a class="btn-black product-store-link" href="https://apps.apple.com/us/app/mysongs/id6814960554" target="_blank" rel="noopener noreferrer">View on the App Store <span aria-hidden="true">↗</span></a></div><div class="product-visual product-carousel" data-carousel="mysongs" aria-label="MySongs screenshots">
-      <div class="product-carousel-track" tabindex="0" role="region" aria-roledescription="carousel"><img class="product-carousel-image" src="img/apps/mysongs-01.webp" alt="MySongs — 1 / 5" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-02.webp" alt="MySongs — 2 / 5" loading="eager" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-03.webp" alt="MySongs — 3 / 5" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-04.webp" alt="MySongs — 4 / 5" loading="lazy" decoding="async"><img class="product-carousel-image" src="img/apps/mysongs-05.webp" alt="MySongs — 5 / 5" loading="lazy" decoding="async"></div>
-      <button class="product-carousel-arrow product-carousel-prev" type="button" aria-label="Previous screenshot" disabled>‹</button>
-      <button class="product-carousel-arrow product-carousel-next" type="button" aria-label="Next screenshot">›</button>
-      <span class="product-carousel-progress" aria-live="polite">01 / 05</span>
-    </div></article></div></div></section>
-      <script>(function(){const ids=['6759878768','6814960554'];Promise.all(ids.map(async id=>{try{const r=await fetch('https://itunes.apple.com/lookup?id='+id+'&country=us');if(!r.ok)return;const data=await r.json();const app=data.results&&data.results[0];if(!app)return;const icon=document.querySelector('[data-app-icon="'+id+'"]');const shot=document.querySelector('[data-app-shot="'+id+'"]');if(icon&&app.artworkUrl512)icon.src=app.artworkUrl512;if(shot){const url=(app.screenshotUrls&&app.screenshotUrls[0])||(app.ipadScreenshotUrls&&app.ipadScreenshotUrls[0]);if(url){shot.src=url;shot.onload=()=>shot.closest('.product-visual').classList.add('has-image')}}}catch(e){}}))})();</script>
+<script>(function(){const ids=['6759878768','6814960554'];Promise.all(ids.map(async id=>{try{const r=await fetch('https://itunes.apple.com/lookup?id='+id+'&country=us');if(!r.ok)return;const data=await r.json();const app=data.results&&data.results[0];if(!app)return;const icon=document.querySelector('[data-app-icon="'+id+'"]');const shot=document.querySelector('[data-app-shot="'+id+'"]');if(icon&&app.artworkUrl512)icon.src=app.artworkUrl512;if(shot){const url=(app.screenshotUrls&&app.screenshotUrls[0])||(app.ipadScreenshotUrls&&app.ipadScreenshotUrls[0]);if(url){shot.src=url;shot.onload=()=>shot.closest('.product-visual').classList.add('has-image')}}}catch(e){}}))})();</script>
 
 <script>
 (function () {
@@ -270,69 +169,15 @@
   });
 })();
 </script>
-      <!-- CONTACTS -->
-      <section id="contacts" class="section">
-        <div class="container">
-          <div class="contacts-head">
-            <div class="signature-line gold"></div>
-            <h2 class="font-title type-h2">Get in touch</h2>
-          </div>
-          <div class="grid-2 type-body contacts-grid">
-            <div class="contacts-links">
-              <a href="https://t.me/artom_dev" target="_blank" class="contact-a">Telegram</a>
-              <a href="https://instagram.com/artom.dev" target="_blank" class="contact-a">Instagram</a>
-              <a href="https://artom-sites.github.io/artom.dev/" target="_blank" class="contact-a">artom.dev</a>
-              <a href="mailto:artom.devv@gmail.com" class="contact-a">artom.devv@gmail.com</a>
-            </div>
-            <div class="imprint">
-              <div>Webflow websites</div>
-              <div>Created by artom.dev</div>
-              <div class="footer-cta">
-                <button class="btn-black open-contact">Order a website</button>
-              </div>
-            </div>
-          </div>
-          <div class="copyright">
-            © 2025 ARTOM — Premium Editorial
-          </div>
-        </div>
-      </section>
-    </main>
+      
+<script>
+(function(){
+const btn=document.getElementById('lang-btn'),wrapper=btn.parentElement;
+function closeLanguages(){wrapper.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.addEventListener('click',function(){const open=wrapper.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));});
+document.addEventListener('click',function(event){if(!wrapper.contains(event.target))closeLanguages();});
+document.addEventListener('keydown',function(event){if(event.key==='Escape')closeLanguages();});
+})();
+</script>
 
-    <script>
-      // Reveal on scroll
-      const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}})},{threshold:0.2});
-      document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.reveal').forEach(el=>io.observe(el));});
-    </script>
-
-    <!-- Contact Modal (popup) -->
-    <div id="contact-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="false">
-      <div class="modal__overlay" data-close-modal></div>
-      <div class="modal__dialog" role="document">
-        <button class="modal__close" type="button" aria-label="Close" data-close-modal>×</button>
-        <h3 class="type-h3 modal__title">Order a website</h3>
-        <form id="contact-form" class="modal__form" action="#" method="post" novalidate>
-          <label class="modal__field">
-            <span>Your name</span>
-            <input type="text" name="name" required placeholder="Name" />
-          </label>
-          <label class="modal__field">
-            <span>Telegram</span>
-            <input type="text" name="telegram" required placeholder="@username" />
-          </label>
-          <label class="modal__field">
-            <span>Message</span>
-            <textarea name="message" rows="4" required placeholder="Briefly describe the task"></textarea>
-          </label>
-          <div class="modal__actions">
-            <button type="submit" class="btn-gold">Send</button>
-            <button type="button" class="cta-link" data-close-modal>Cancel</button>
-          </div>
-          <p class="modal__note">Fill out the form — I will reply within a day.</p>
-        </form>
-      </div>
-    </div>
-
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
+</body></html>
