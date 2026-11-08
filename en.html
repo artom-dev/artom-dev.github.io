@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261108" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261108-gallery" />
     <!-- hreflang -->
     <link rel="alternate" hreflang="uk" href="./index.html" />
     <link rel="alternate" hreflang="en" href="./en.html" />
@@ -225,25 +225,47 @@
     const prev=carousel.querySelector('.product-carousel-prev');
     const next=carousel.querySelector('.product-carousel-next');
     const progress=carousel.querySelector('.product-carousel-progress');
-    function activeIndex(){
-      return Math.max(0,Math.min(slides.length-1,Math.round(track.scrollLeft / Math.max(track.clientWidth,1))));
-    }
+    let destination=track.scrollLeft;
+    let frame=0;
+    function limit(){return Math.max(0,track.scrollWidth-track.clientWidth);}
+    function positions(){return slides.map(function(slide){return slide.offsetLeft-slides[0].offsetLeft;});}
     function update(){
-      const at=activeIndex();
-      prev.disabled=at===0;
-      next.disabled=at===slides.length-1;
+      const left=track.scrollLeft;
+      const at=positions().reduce(function(best,pos,index){
+        return Math.abs(pos-left)<Math.abs(positions()[best]-left)?index:best;
+      },0);
+      prev.disabled=left<=1;
+      next.disabled=left>=limit()-1;
       progress.textContent=String(at+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
     }
+    function move(left){
+      destination=Math.max(0,Math.min(limit(),left));
+      track.scrollTo({left:destination,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+    }
     function go(delta){
-      const at=Math.max(0,Math.min(slides.length-1,activeIndex()+delta));
-      track.scrollTo({left:at*track.clientWidth,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
-      window.setTimeout(update,350);
+      const stops=positions();
+      const nextStop=delta>0?stops.find(function(pos){return pos>destination+1;}):stops.slice().reverse().find(function(pos){return pos<destination-1;});
+      move(nextStop===undefined?(delta>0?limit():0):nextStop);
     }
     prev.addEventListener('click',function(){go(-1);});
     next.addEventListener('click',function(){go(1);});
-    track.addEventListener('scroll',function(){window.requestAnimationFrame(update);},{passive:true});
-    track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1);}if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}});
-    window.addEventListener('resize',update);
+    track.addEventListener('scroll',function(){
+      cancelAnimationFrame(frame);
+      frame=requestAnimationFrame(update);
+    },{passive:true});
+    track.addEventListener('scrollend',function(){destination=track.scrollLeft;update();});
+    ['pointerdown','wheel','touchstart'].forEach(function(event){
+      track.addEventListener(event,function(){destination=track.scrollLeft;},{passive:true});
+    });
+    track.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+        e.preventDefault();destination=track.scrollLeft;go(e.key==='ArrowRight'?1:-1);
+      }
+      if(e.key==='Home'||e.key==='End'){e.preventDefault();move(e.key==='Home'?0:limit());}
+    });
+    function refresh(){destination=track.scrollLeft;update();}
+    slides.forEach(function(slide){slide.addEventListener('load',refresh);});
+    window.addEventListener('resize',refresh);
     update();
   });
 })();

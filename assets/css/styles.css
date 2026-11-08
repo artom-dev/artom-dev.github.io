@@ -1562,43 +1562,43 @@ html.has-modal, body.has-modal{ overflow:hidden; }
 @media(max-width:760px){#apps.apps-section{padding:4rem 0}#apps .products-intro,#apps .products-list{grid-template-columns:1fr;gap:2rem}#apps .products-intro{margin-bottom:2rem}#apps .product-visual{height:330px}#apps .product-shot{height:300px}}
 
 
-/* Screenshots within the original grey case containers; one screenshot at a time. */
+/* Continuous screenshot strips within the original grey case containers. */
 #apps .product-visual.product-carousel{
   position:relative;display:block;height:370px;overflow:hidden;background:#f5f5f4;
 }
 #apps .product-feature:nth-child(2) .product-visual.product-carousel{background:#f6f6f7}
 #apps .product-carousel-track{
-  display:flex;gap:0;width:100%;height:100%;padding:0;box-sizing:border-box;
-  overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  scrollbar-width:none;overscroll-behavior-x:contain;
+  display:flex;align-items:stretch;gap:12px;width:100%;height:100%;
+  padding:22px 18px 54px;box-sizing:border-box;
+  overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-behavior:smooth;
+  scroll-padding-inline:18px;scrollbar-width:none;overscroll-behavior-x:contain;
 }
 #apps .product-carousel-track::-webkit-scrollbar{display:none}
 #apps .product-carousel-image{
-  display:block;flex:0 0 100%;width:100%;height:100%;max-width:100%;
-  padding:22px 54px 32px;box-sizing:border-box;object-fit:contain;
-  border-radius:0;scroll-snap-align:start;scroll-snap-stop:always;
+  display:block;flex:0 0 auto;width:auto;height:100%;max-width:none;aspect-ratio:auto 600 / 1300;
+  padding:0;box-sizing:border-box;object-fit:contain;
+  border-radius:0;scroll-snap-align:start;
 }
+#apps .product-carousel-track:focus-visible{outline:2px solid #111;outline-offset:-2px}
 #apps .product-carousel-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  display:flex;align-items:center;justify-content:center;width:36px;height:36px;
+  position:absolute;bottom:10px;top:auto;transform:none;
+  display:flex;align-items:center;justify-content:center;width:32px;height:32px;
   border:1px solid #dedede;background:#fff;color:#111;border-radius:50%;
   font:26px/1 Arial,sans-serif;padding:0 0 3px;cursor:pointer;z-index:2;
 }
-#apps .product-carousel-prev{left:10px}
-#apps .product-carousel-next{right:10px}
+#apps .product-carousel-prev{left:18px}
+#apps .product-carousel-next{left:58px;right:auto}
 #apps .product-carousel-arrow:disabled{opacity:.25;cursor:default}
 #apps .product-carousel-arrow:focus-visible{outline:2px solid #111;outline-offset:3px}
 #apps .product-carousel-progress{
-  position:absolute;bottom:10px;right:15px;color:#888;
+  position:absolute;bottom:20px;right:18px;color:#888;
   font-size:10px;letter-spacing:.15em;pointer-events:none;
 }
 @media(max-width:760px){
   #apps .product-visual.product-carousel{height:330px}
-  #apps .product-carousel-image{padding:18px 42px 30px}
-  #apps .product-carousel-arrow{width:32px;height:32px}
+  #apps .product-carousel-track{padding-top:18px}
 }
 @media(prefers-reduced-motion:reduce){#apps .product-carousel-track{scroll-behavior:auto}}
-
 
 /* Available-for-purchase Webflow case — same card style as the portfolio */
 .case--for-sale .case-sale-badge{
@@ -1634,3 +1634,4 @@ html.has-modal, body.has-modal{ overflow:hidden; }
 
 /* Keep both MyChoir store links in the existing button style. */
 #apps .product-store-links{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-start}
+
