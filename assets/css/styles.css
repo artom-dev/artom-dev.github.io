@@ -133,3 +133,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(hover:hover) and (pointer:fine){.case:hover .browser-frame{transform:translateY(-5px);box-shadow:0 16px 30px -18px #3b4f3a55;border-color:#aab99f}.case:hover .bg img{transform:scale(1.035)}}
 @media(max-width:760px){.browser-bar{height:40px;grid-template-columns:35px minmax(0,1fr) 18px;gap:8px;padding:0 11px}.browser-dots{gap:4px}.browser-dots i{width:6px;height:6px}.browser-address{font-size:9px;line-height:24px;padding:0 7px}.browser-frame{border-radius:11px}.case-sale-badge{top:52px}}
 @media(prefers-reduced-motion:reduce){.case.reveal-ready{opacity:1;transform:none;transition:none}.case:hover .browser-frame,.case:hover .bg img{transform:none}.browser-frame,.browser-address{transition:none}}
+
+/* A secondary service, kept within the personal portfolio's quiet visual language. */
+.advertising-note{display:flex;align-items:center;justify-content:space-between;gap:36px;margin-top:48px;padding:30px 32px;border:1px solid var(--line);background:var(--soft);scroll-margin-top:110px}
+.advertising-note h3{font-size:clamp(23px,2.3vw,30px);margin:12px 0}
+.advertising-note p{font-size:13px;line-height:1.8;max-width:62ch}
+.advertising-note>.btn-black{flex-shrink:0}
+@media(max-width:760px){.advertising-note{align-items:flex-start;flex-direction:column;gap:22px;margin-top:32px;padding:24px}.advertising-note>.btn-black{max-width:100%}}
